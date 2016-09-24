@@ -5,7 +5,7 @@ language_tabs:
   - shell
 
 toc_footers:
-  - <a href='http://aolab.github.io'>AoLab</a>  
+  - <a href='http://aolab.github.io'>AoLab</a>
   - <a href='https://github.com/tabrizian'>Iman Tabrizian</a>
   - <a href='https://github.com/1995parham'>Parham Alvani</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
@@ -18,22 +18,63 @@ search: true
 
 # Introduction
 
-Welcome to the I1820 API!   
+Welcome to the I1820 API!
+
 This documentation is intended to provide
 simple and easy to use documentation API of middleware team. As you can see
-on the right side of the page there are ```curl``` commands that will execute
+on the right side of the page there are `curl` commands that will execute
 requests against our API.
 
 # Things
 
 ## States & Statistics
 
-> To read the states and statistics use this code:
+```shell
+curl -X POST -H "Content-Type: application/json" -d '{
+        "type": "multisensor",
+        "rpi_id": "b07882d6-5c28-597b-89f9-d250f74b0bad",
+        "device_id": "1",
+        "states": [
+             "temperature",
+	     "humidity"
+	]
+    }' "iot.ceit.aut.ac.ir:58902/thing"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "humidity": {
+        "value": "27",
+        "time": "2016-09-24T23:05:34Z"
+    },
+    "temperature": {
+        "value": "24",
+        "time": "2016-09-24T23:05:34Z"
+    }
+}
+```
+
+This request is used getting sensors information. Through the states
+parameters you can list the values you want and the middleware will take care of the
+rest of the job.
+
+The parameter list for this request must be **json** formatted. Here is the
+parameters list for this request:
+
+ Parameter | Description
+:--------- |:-------------------------------------
+type       | Type of the thing you want to trigger.
+rpi_id     | The RPi id obtained from `/discovery` command.
+device_id  | The node id in the sub network of the specified RPi
+states     | An array containing the sensor paramaters that can be readed for example for temperature there is only "temperature" available
+
+### HTTP Request
+
+`POST http://iot.ceit.aut.ac.ir:58902/thing`
 
 ## Discovery
-
-In order to get all of the nodes that are connected to the system use you 
-can use the following http request
 
 ```shell
 curl "iot.ceit.aut.ac.ir:58902/discovery"
@@ -62,6 +103,9 @@ curl "iot.ceit.aut.ac.ir:58902/discovery"
 }
 ```
 
+This request is used for getting all of the nodes that are connected
+to the system.
+
 ### HTTP Request
 
 `GET http://iot.ceit.aut.ac.ir:58902/discovery`
@@ -73,35 +117,35 @@ Lua developers don't worry <code>POST</code> is also possible.
 ## Settings
 
 ```shell
-curl -X PUT -H "Content-Type: application/json" -d "{
-        \"type\": \"lamp\",
-        \"rpi_id\": \"b07882d6-5c28-597b-89f9-d250f74b0bad\",
-            \"device_id\": \"1:5\",
-            \"settings\": {
-            \"on\": true
+curl -X PUT -H "Content-Type: application/json" -d '{
+        "type": "lamp",
+        "rpi_id": "b07882d6-5c28-597b-89f9-d250f74b0bad",
+        "device_id": "1:5",
+        "settings": {
+            "on": true
         }
-    }" "iot.ceit.aut.ac.ir:58902/thing"
+    }' "iot.ceit.aut.ac.ir:58902/thing"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
+{"on": true}
 ```
 
-This request is used for activating actuators or not. Through the settings 
-parameters you can set the values and the middleware will take care of the 
-rest of the job. 
+This request is used for activating actuators or not. Through the settings
+parameters you can set the values and the middleware will take care of the
+rest of the job.
 
-The parameter list for this request must be **json** formatted. Here is the 
+The parameter list for this request must be **json** formatted. Here is the
 parameters list for this request:
 
-Parameter | Description
---------- | -----------
-type | Type of the thing you want to trigger 
-rpi_id | The RPi id obtained from ```/discovery``` command. 
-device_id | The node id in the sub network of the specified rpi
-settings | An object containing the actuators paramaters that can be triggred 
-for example for lamp there is only "on" available
+ Parameter | Description
+:--------- |:-------------------------------------
+type       | Type of the thing you want to trigger.
+rpi_id     | The RPi id obtained from `/discovery` command.
+device_id  | The node id in the sub network of the specified RPi
+settings   | An object containing the actuators paramaters that can be triggred  for example for lamp there is only "on" available
 
 ### HTTP Request
 
