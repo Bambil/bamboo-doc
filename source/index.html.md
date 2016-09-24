@@ -88,6 +88,15 @@ curl -X PUT -H "Content-Type: application/json" -d "{
 ```
 
 This request is used for activating actuators or not. Through the settings params
-you can set the values and the middleware will take care of the rest of the job.
+you can set the values and the middleware will take care of the rest of the job. 
 
+The parameter list for this request must be json formatted. Here is the params
+list for this request:
+
+Parameter | Description
+--------- | -----------
+type | Type of the thing you want to trigger 
+rpi_id | The RPi id obtained from ```/discovery``` command. 
+device_id | The node id in the sub network of the specified rpi
+settings | An object containing the actuators paramaters that can be triggred for example for lamp there is only "on" available
 
