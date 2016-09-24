@@ -72,7 +72,14 @@ Lua developers don't worry <code>POST</code> is also possible.
 ## Settings
 
 ```shell
-
+curl -X PUT -H "Content-Type: application/json" -d "{
+        \"type\": \"lamp\",
+        \"rpi_id\": \"b07882d6-5c28-597b-89f9-d250f74b0bad\",
+            \"device_id\": \"1:5\",
+            \"settings\": {
+            \"on\": true
+        }
+    }" "iot.ceit.aut.ac.ir:58902/thing"
 ```
 
 > The above command returns JSON structured like this:
