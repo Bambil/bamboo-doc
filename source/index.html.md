@@ -5,7 +5,9 @@ language_tabs:
   - shell
 
 toc_footers:
-  - <a href='AoLab'>http://aolab.github.io</a>
+  - <a href='http://aolab.github.io'>AoLab</a>
+  - <a href='https://github.com/tabrizian'>Iman Tabrizian</a>
+  - <a href='https://github.com/1995parham'>Parham Alvani</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -16,7 +18,8 @@ search: true
 
 # Introduction
 
-Welcome to the I1820 API!
+Welcome to the I1820 API! This documentation is intended to provide
+simple and easy to use documentation API of middleware team.
 
 # Things
 
