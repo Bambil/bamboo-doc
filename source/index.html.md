@@ -26,10 +26,8 @@ Welcome to the I1820 API!
 
 ## Discovery
 
-> To get discovered raspberry pis and thier things use this code:
 
 ```shell
-# With shell, you can just pass the correct header with each request
 curl "iot.ceit.aut.ac.ir:58902/discovery"
 ```
 
