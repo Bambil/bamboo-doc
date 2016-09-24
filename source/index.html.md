@@ -18,7 +18,8 @@ search: true
 
 # Introduction
 
-Welcome to the I1820 API! This documentation is intended to provide
+Welcome to the I1820 API!   
+This documentation is intended to provide
 simple and easy to use documentation API of middleware team. As you can see
 on the right side of the page there are ```curl``` commands that will execute
 requests against our API.
@@ -87,18 +88,20 @@ curl -X PUT -H "Content-Type: application/json" -d "{
 ```json
 ```
 
-This request is used for activating actuators or not. Through the settings params
-you can set the values and the middleware will take care of the rest of the job. 
+This request is used for activating actuators or not. Through the settings 
+parameters you can set the values and the middleware will take care of the 
+rest of the job. 
 
-The parameter list for this request must be json formatted. Here is the params
-list for this request:
+The parameter list for this request must be **json** formatted. Here is the 
+parameters list for this request:
 
 Parameter | Description
 --------- | -----------
 type | Type of the thing you want to trigger 
 rpi_id | The RPi id obtained from ```/discovery``` command. 
 device_id | The node id in the sub network of the specified rpi
-settings | An object containing the actuators paramaters that can be triggred for example for lamp there is only "on" available
+settings | An object containing the actuators paramaters that can be triggred 
+for example for lamp there is only "on" available
 
 ### HTTP Request
 
