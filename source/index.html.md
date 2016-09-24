@@ -66,14 +66,12 @@ curl "iot.ceit.aut.ac.ir:58902/discovery"
 `GET http://iot.ceit.aut.ac.ir:58902/discovery`
 
 <aside class="success">
-Lua developers don't worry ```POST``` is also possible.
+Lua developers don't worry <code>POST</code> is also possible.
 </aside>
 
 ## Settings
 
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
 ```
 
 > The above command returns JSON structured like this:
