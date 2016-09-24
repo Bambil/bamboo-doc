@@ -100,3 +100,6 @@ rpi_id | The RPi id obtained from ```/discovery``` command.
 device_id | The node id in the sub network of the specified rpi
 settings | An object containing the actuators paramaters that can be triggred for example for lamp there is only "on" available
 
+### HTTP Request
+
+`PUT http://iot.ceit.aut.ac.ir:58902/thing`
