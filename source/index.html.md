@@ -87,5 +87,7 @@ curl -X PUT -H "Content-Type: application/json" -d "{
 ```json
 ```
 
+This request is used for activating actuators or not. Through the settings params
+you can set the values and the middleware will take care of the rest of the job.
 
 
