@@ -11,6 +11,7 @@ toc_footers:
 includes:
   - things
   - plugins
+  - events
   - errors
 
 search: true
