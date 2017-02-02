@@ -6,7 +6,7 @@ We use [socket.io](http://socket.io/) for event dispatching and you can connect 
 informations:
 
 - Namespace: `/I1820`
-- Channel: `Event`, `Log` and `Discovery`
+- Channel: `Event`, `Log`, `Raw` and `Discovery`
 
 ## Event
 Events occur when sensors send an event to I1820.
@@ -25,3 +25,6 @@ Events occur when sensors send an event to I1820.
     }
 }
 ```
+
+## Raw
+
