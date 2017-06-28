@@ -46,7 +46,7 @@ states     | An array containing the sensor paramaters that can be readed for ex
 
 ### HTTP Request
 
-`POST http://iot.ceit.aut.ac.ir:58902/thing`
+`POST http://ip_address:8080/thing`
 
 ## Discovery
 
@@ -77,7 +77,7 @@ to the system.
 
 ### HTTP Request
 
-`GET http://iot.ceit.aut.ac.ir:58902/agent`
+`GET http://ip_address:8080/agent`
 
 ## Settings
 
@@ -114,4 +114,4 @@ settings   | An object containing the actuators paramaters that can be triggred 
 
 ### HTTP Request
 
-`PUT http://iot.ceit.aut.ac.ir:58902/thing`
+`PUT http://ip_address:8080/thing`
