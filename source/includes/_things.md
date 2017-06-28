@@ -5,14 +5,14 @@ I1820 Thing management and control API.
 
 ```shell
 curl -X POST -H "Content-Type: application/json" -d '{
-        "type": "multisensor",
-        "agent_id": "b07882d6-5c28-597b-89f9-d250f74b0bad",
-        "device_id": "1",
-        "states": [
-             "temperature",
-	     "humidity"
+	"type": "multisensor",
+	"agent_id": "b07882d6-5c28-597b-89f9-d250f74b0bad",
+	"device_id": "1",
+	"states": [
+		"temperature",
+		"humidity"
 	]
-    }' "iot.ceit.aut.ac.ir:58902/thing"
+}' "iot.ceit.aut.ac.ir:58902/thing"
 ```
 
 > The above command returns JSON structured like this:
@@ -30,8 +30,8 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
-This request is used getting sensors information. Through the states
-parameters you can list the values you want and the I1820 will take care of the
+This request is used getting information. Through the states
+parameter you can list the name of values you want and the I1820 will take care of the
 rest of the job.
 
 The parameter list for this request must be **json** formatted. Here is the
@@ -60,16 +60,14 @@ curl "iot.ceit.aut.ac.ir:58902/agent"
 {
     "b07882d6-5c28-597b-89f9-d250f74b0bad": {
         "time": "2016-09-20 18:05:56.124096",
-	"things": [
-	    {
-	        "id": "0",
-		"type": "lamp"
-	    },
-	    {
-	        "id": "1",
-		"type": "temperature"
-	    }
-	]
+        "things": [
+        {
+            "id": "0",
+            "type": "lamp"
+        }, {
+            "id": "1",
+            "type": "temperature"
+        }]
     }
 }
 ```
@@ -85,13 +83,13 @@ to the system.
 
 ```shell
 curl -X PUT -H "Content-Type: application/json" -d '{
-        "type": "lamp",
-        "agent_id": "b07882d6-5c28-597b-89f9-d250f74b0bad",
-        "device_id": "1:5",
-        "settings": {
-            "on": true
-        }
-    }' "iot.ceit.aut.ac.ir:58902/thing"
+	"type": "lamp",
+	"agent_id": "b07882d6-5c28-597b-89f9-d250f74b0bad",
+	"device_id": "1:5",
+	"settings": {
+		"on": true
+	}
+}' "iot.ceit.aut.ac.ir:58902/thing"
 ```
 
 > The above command returns JSON structured like this:
