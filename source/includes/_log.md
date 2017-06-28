@@ -18,6 +18,14 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }' "ip_address:8080/thing"
 ```
 
+```javascript
+agent.getThingsByType('multisensor').forEach((thing) => {
+  thing.log.then((result) => {
+    JSON.stringify(result);
+  });
+});
+```
+
 > The above command returns JSON structured like this:
 
 ```json
