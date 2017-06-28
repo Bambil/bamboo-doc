@@ -42,7 +42,7 @@ agent.getThingsByType('multisensor').forEach((thing) => {
 ```
 
 This request is used getting information. Through the states
-parameter you can list the name of values you want and the I1820 will take care of the
+parameter you can list the name of values you want and the *Log Component* will take care of the
 rest of the job.
 
 The parameter list for this request must be **json** formatted. Here is the
@@ -60,3 +60,29 @@ states     | An array containing the sensor paramaters that can be readed for ex
 `POST http://ip_address:8080/thing`
 
 ## Thing Point of View
+
+```json
+{
+    "agent": "dummy",
+    "device": "1",
+    "type": "temperature",
+    "states": [{
+        "name": "temperature",
+        "value": "10"
+    }],
+    "timestamp": 10
+}
+```
+
+This request is used sending information.
+
+The parameter list for this request must be **json** formatted. Here is the
+parameters list for this request:
+
+ Parameter | Description
+:--------- |:-------------------------------------
+agent      | Agent identification
+device     | Target end device identification
+type       | Type of target end device
+timestamp  | Log generated time
+states     | Cuurent states of target end device
