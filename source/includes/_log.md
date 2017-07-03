@@ -61,6 +61,8 @@ states     | An array containing the sensor paramaters that can be readed for ex
 
 ## Thing Point of View
 
+> Type: Log
+
 ```json
 {
     "agent": "dummy",
@@ -74,7 +76,7 @@ states     | An array containing the sensor paramaters that can be readed for ex
 }
 ```
 
-This request is used sending information.
+This request is used for sending information.
 
 The parameter list for this request must be **json** formatted. Here is the
 parameters list for this request:
