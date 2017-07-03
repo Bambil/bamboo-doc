@@ -12,6 +12,8 @@ toc_footers:
 includes:
   - log
   - conf
+  - dm
+  - events
 
 search: true
 ---
