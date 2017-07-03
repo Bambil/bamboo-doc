@@ -1,5 +1,5 @@
 # Events
-I1820 Realtime pipe, that dispatchs human related events.
+Realtime pipe, that dispatchs application related events.
 
 ## General Information
 We use [socket.io](http://socket.io/) for event dispatching and you can connect to it with following
@@ -8,7 +8,7 @@ informations:
 - Namespace: `/I1820`
 - Channel: `Event`, `Log`, `Raw` and `Discovery`
 
-## Event
+### Event
 Events occur when sensors send an event to I1820.
 
 ```json
@@ -26,5 +26,4 @@ Events occur when sensors send an event to I1820.
 }
 ```
 
-## Raw
-
+### Raw
