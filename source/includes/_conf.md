@@ -42,6 +42,8 @@ settings   | An object containing the actuators paramaters that can be triggred,
 
 ## Thing Point of View
 
+> Type: ConfChanged
+
 ```json
 {
     "agent": "dummy",
@@ -55,6 +57,8 @@ settings   | An object containing the actuators paramaters that can be triggred,
 ```
 
 This request is used for sending configuration changed event.
+
+> Type: Conf
 
 ```json
 {
