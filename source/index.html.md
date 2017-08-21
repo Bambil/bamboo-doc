@@ -1,19 +1,19 @@
 ---
-title: d2I1820 Documentation
+title: Bamboo Documentation
 
 language_tabs:
   - shell
   - javascript
 
 toc_footers:
-  - <a href='http://aolab.github.io'>AoLab</a>
+  - <a href='http://bambil.github.io'>Bambil</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
   - log
-  - conf
+  - trap
   - dm
-  - events
+  - connectivity
 
 search: true
 ---
@@ -21,18 +21,21 @@ search: true
 # Introduction
 **Good Days, Good Things**
 
-Welcome to the d2I1820 Documentation!
+Welcome to the Bamboo Documentation!
 
-Docker based Distributed I1820 (d2I1820) is a new version of our platform that targets distributed environments.
-d2I1820 uses microservices architecture and written in Node.js.
+Bamboo is an IoT platfrom that is the product of three teams:
 
-This documentation is intended to provide
-simple and easy to use documentation of d2I1820.
+* Nahal Corporation
+* Bambil Corporation
+* I1820 Platfrom Developers
 
-There is two point of view in this documentation:
+Bamboo tries to implement IoT platform in microservices archiecture for the first-time in Iran.
+
+There are two points of view in this documentation:
+
 <dl>
-<dt>Things Point of View</dt>
-<dd>you are a thing and want to communicate.</dd>
-<dt>Applications Point of View</dt>
-<dd>you are an application and want to communicate.</dd>
+  <dt>Things Point of View</dt>
+  <dd>you are a thing and want to communicate.</dd>
+  <dt>Applications Point of View</dt>
+  <dd>you are an application and want to communicate.</dd>
 </dl>
