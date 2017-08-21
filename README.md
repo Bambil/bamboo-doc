@@ -1,8 +1,8 @@
 # Bamboo Documentation
 
-<center>
-  <img alt="bamboo-logo" src="sources/images/logo.png" width="100px">
-</center>
+<p align="center">
+  <img alt="bamboo-logo" src="source/images/logo.png" width="150px">
+</p>
 
 ## Introduction
 Bamboo is an IoT platfrom that is the product of three teams:
@@ -13,5 +13,5 @@ Bamboo is an IoT platfrom that is the product of three teams:
 
 ## Special Thanks
 
-- [Slate](https://github.com/lord/slate)
-- [Iman Tabrizian](https://github.com/tabrizian)
+- [Slate](https://github.com/lord/slate): Beautiful static documentation for your API
+- [Iman Tabrizian](https://github.com/tabrizian): Founder of Bambil and Architectural Designer of Bamboo
