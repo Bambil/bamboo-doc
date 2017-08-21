@@ -1,0 +1,294 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Bamboo Documentation</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #f8f8f2;
+  background-color: #272822;
+}
+.highlight .err {
+  color: #151515;
+  background-color: #ac4142;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #505050;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #d0d0d0;
+}
+.highlight .p, .highlight .pi {
+  color: #d0d0d0;
+}
+.highlight .gi {
+  color: #90a959;
+}
+.highlight .gd {
+  color: #ac4142;
+}
+.highlight .gh {
+  color: #6a9fb5;
+  background-color: #151515;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #aa759f;
+}
+.highlight .kc {
+  color: #d28445;
+}
+.highlight .kt {
+  color: #d28445;
+}
+.highlight .kd {
+  color: #d28445;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #90a959;
+}
+.highlight .sr {
+  color: #75b5aa;
+}
+.highlight .si {
+  color: #8f5536;
+}
+.highlight .se {
+  color: #8f5536;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #6a9fb5;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #90a959;
+}
+.highlight .ss {
+  color: #90a959;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+            <li><a href='http://bambil.github.io'>Bambil</a></li>
+            <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="introduction">Introduction</h1>
+
+<p><strong>Good Days, Good Things</strong></p>
+
+<p>Welcome to the Bamboo Documentation!</p>
+
+<p>Bamboo is an IoT platfrom that is the product of three teams:</p>
+
+<ul>
+<li>Nahal Corporation</li>
+<li>Bambil Corporation</li>
+<li>I1820 Platfrom Developers</li>
+</ul>
+
+<p>Bamboo tries to implement IoT platform in microservices archiecture for the first-time in Iran.</p>
+
+<p>There are two points of view in this documentation:</p>
+
+<dl>
+  <dt>Things Point of View</dt>
+  <dd>you are a thing and want to communicate.</dd>
+  <dt>Applications Point of View</dt>
+  <dd>you are an application and want to communicate.</dd>
+</dl>
+
+          <h1 id="log">Log</h1>
+
+<p><strong>Log</strong> is every data that comes from the sensors, Log component provides following services:</p>
+
+<ol>
+<li>Log Collection</li>
+<li>Log Mediation</li>
+<li>Log Storing</li>
+</ol>
+
+<h2 id="application-point-of-view">Application Point of View</h2>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{
+    "type": "multisensor",
+    "agent_id": "b07882d6-5c28-597b-89f9-d250f74b0bad",
+    "device_id": "1",
+    "states": [
+        "temperature",
+        "humidity"
+    ]
+}'</span> <span class="s2">"ip_address:8080/thing"</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">agent</span><span class="p">.</span><span class="nx">getThingsByType</span><span class="p">(</span><span class="s1">'multisensor'</span><span class="p">).</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">thing</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">thing</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"humidity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"27"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-24T23:05:34Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"temperature"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-24T23:05:34Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This request is used getting information. Through the states
+parameter you can list the name of values you want and the <em>Log Component</em> will take care of the
+rest of the job.</p>
+
+<p>The parameter list for this request must be <strong>json</strong> formatted. Here is the
+parameters list for this request:</p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">type</td>
+<td style="text-align: left">Type of the thing you want to get the information.</td>
+</tr>
+<tr>
+<td style="text-align: left">agent_id</td>
+<td style="text-align: left">The Agent id obtained from <code class="prettyprint">/agent</code> command.</td>
+</tr>
+<tr>
+<td style="text-align: left">device_id</td>
+<td style="text-align: left">The node id in the sub network of the specified Agent.</td>
+</tr>
+<tr>
+<td style="text-align: left">states</td>
+<td style="text-align: left">An array containing the sensor paramaters that can be readed for example for temperature there is only <em>temperature</em> available</td>
+</tr>
+</tbody></table>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://ip_address:8080/thing</code></p>
+
+<h2 id="thing-point-of-view">Thing Point of View</h2>
+
+<blockquote>
+<p>Type: Log</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"agent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dummy"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"device"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"temperature"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"states"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"temperature"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This request is used for sending information.</p>
+
+<p>The parameter list for this request must be <strong>json</strong> formatted. Here is the
+parameters list for this request:</p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">agent</td>
+<td style="text-align: left">Agent identification</td>
+</tr>
+<tr>
+<td style="text-align: left">device</td>
+<td style="text-align: left">Target end device identification</td>
+</tr>
+<tr>
+<td style="text-align: left">type</td>
+<td style="text-align: left">Type of target end device</td>
+</tr>
+<tr>
+<td style="text-align: left">timestamp</td>
+<td style="text-align: left">Log generated time</td>
+</tr>
+<tr>
+<td style="text-align: left">states</td>
+<td style="text-align: left">Cuurent states of target end device</td>
+</tr>
+</tbody></table>
+
+          
+          <h1 id="dm">DM</h1>
+
+<p>Device management component provide very basid level of management for things and agents
+and provides following services:</p>
+
+<ol>
+<li>Assign identification to agents</li>
+</ol>
+
+          
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
