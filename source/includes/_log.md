@@ -5,7 +5,7 @@ Log is any incoming data from sensors, Expected to be received periodically.
 ```shell
 curl -X POST -H "Content-Type: application/json" -d '{
         "type": "temperature",
-	"agent_id": "parham_home/Newbie",
+        "agent_id": "parham_home/Newbie",
         "device_id": "1:7",
         "states": [
                 "temperature"
@@ -56,15 +56,15 @@ states     | An array containing the sensor paramaters that can be readed for ex
 
 ```json
 {
-    "hash": #,
+    "hash": "89ff0a48f1a799d1c8a3d409bdac0cd527f93036fd40c1860c1cae188ebc2961",
     "name": "Newbie",
     "data": {
         "id": "7:1",
         "type": "temperature",
         "state": [{
-            "temperature": "10"
+            "temperature": 10
         }],
-        "timestamp": #
+        "timestamp": 1503341758576
     }
 }
 ```
