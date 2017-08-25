@@ -10,6 +10,7 @@ toc_footers:
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
+  - architecture
   - log
   - trap
   - dm
@@ -29,7 +30,7 @@ Bamboo is an IoT platfrom that is the product of three teams:
 * Bambil Corporation
 * I1820 Platfrom Developers
 
-Bamboo tries to implement IoT platform in microservices archiecture for the first-time in Iran.
+Bamboo tries to implement IoT platform in microservices architecture for the first-time in Iran.
 
 There are two points of view in this documentation:
 
